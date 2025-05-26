@@ -6,20 +6,23 @@ const MyPopper = () => {
   const anchorRef = useRef(null);
 
   return (
-    <div>
+    <div className='flex items-end justify-end mr-5'>
       <Button ref={anchorRef} onClick={() => setOpen((prev) => !prev)}>
         Toggle Popper
       </Button>
       <Popper open={open} anchorEl={anchorRef.current} placement="bottom">
-        <Paper sx={{ padding: 2 }}>
+        <div className='mr-5 mt-2'>
+          <Paper className='p-2 shadow-md'>
           This is a Popper content!
         </Paper>
-        <Paper sx={{ padding: 2 }}>
+          <Paper className='p-2 shadow-md mt-0.5'>
           This is a Popper content!
         </Paper>
-        <Paper sx={{ padding: 2 }}>
+          <Paper className='p-2 shadow-md mt-0.5'>
           This is a Popper content!
         </Paper>
+        </div>
+        
       </Popper>
     </div>
   );
